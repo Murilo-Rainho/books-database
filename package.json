@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Murilo-Rainho/books-database/issues"
   },
-  "homepage": "https://github.com/Murilo-Rainho/books-database#readme"
+  "homepage": "https://github.com/Murilo-Rainho/books-database#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "prisma": "^3.9.2",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
 }
