@@ -1,0 +1,20 @@
+{
+  "name": "books-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Murilo-Rainho/books-database.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Murilo-Rainho/books-database/issues"
+  },
+  "homepage": "https://github.com/Murilo-Rainho/books-database#readme"
+}
