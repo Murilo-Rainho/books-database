@@ -15,6 +15,13 @@ class PublishingCompany {
 
     return createdPublishingCompany;
   }
+
+  async createMany({ data }: { data: newPublishingCompany[] }) {
+    const createdPublishingCompanies = await prismaClient.publishingCompany
+      .createMany({ data });
+
+    return createdPublishingCompanies;
+  }
 };
 
 export default PublishingCompany;

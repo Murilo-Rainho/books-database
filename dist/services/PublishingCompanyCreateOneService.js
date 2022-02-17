@@ -9,21 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const services_1 = require("../services");
-class PublishingCompanyGetAllController {
-    handler(_req, res, next) {
+const models_1 = require("../models");
+class PublishingCompanyCreateOneService {
+    handle(data) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const publishingCompanyGetAllService = new services_1.PublishingCompanyGetAllService();
-                const allPublishingCompanies = yield publishingCompanyGetAllService.handle();
-                return res.status(200).json(allPublishingCompanies);
-            }
-            catch (error) {
-                next(error);
-            }
+            const publishingCompanyModel = new models_1.PublishingCompany();
+            const newPublishingCompany = yield publishingCompanyModel
+                .createOne({ data });
+            return newPublishingCompany;
         });
     }
 }
 ;
-exports.default = PublishingCompanyGetAllController;
-//# sourceMappingURL=PublishingCompanyGetAllController.js.map
+exports.default = PublishingCompanyCreateOneService;
+//# sourceMappingURL=PublishingCompanyCreateOneService.js.map

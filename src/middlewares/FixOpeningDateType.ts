@@ -1,6 +1,25 @@
 import { Response, Request, NextFunction } from 'express';
 
-import { objectError, newPublishingCompany } from '../interfaces';
+import { newPublishingCompany, wrongPublishingCompanyOpeningDateType } from '../interfaces';
+
+const fixOpeningDateFunc = (data: wrongPublishingCompanyOpeningDateType): newPublishingCompany => {
+  const editedOpeningDate = new Date(data.openingDate);
+
+  const {
+    corporateName,
+    fantasyName,
+    address,
+    cellphone,
+  } = data;
+
+  return {
+    corporateName,
+    fantasyName,
+    address,
+    cellphone,
+    openingDate: editedOpeningDate,
+  };
+};
 
 class FixOpeningDateType {
   handler(
@@ -9,23 +28,16 @@ class FixOpeningDateType {
     next: NextFunction
   ): void {
     try {
-      const {
-        corporateName,
-        openingDate,
-        fantasyName,
-        address,
-        cellphone,
-      } = req.body;
+      const data = req.body;
+      let editedData: newPublishingCompany | newPublishingCompany[];
 
-      const editedOpeningDate = new Date(openingDate);
+      if (!Array.isArray(data)) {
+        editedData = fixOpeningDateFunc(data);
+      } else {
+        editedData = data.map(fixOpeningDateFunc);
+      }
 
-      req.data = {
-        corporateName,
-        fantasyName,
-        address,
-        cellphone,
-        openingDate: editedOpeningDate,
-      };
+      req.data = editedData;
 
       next()
     } catch (error) {

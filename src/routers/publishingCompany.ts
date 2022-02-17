@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import {
   PublishingCompanyGetAllController,
-  PublishingCompanyCreateOneController,
+  PublishingCompanyCreateOneOrManyController,
 } from '../controllers';
 
 import { FixOpeningDateType } from '../middlewares';
@@ -14,12 +14,12 @@ const router = Router();
 const publishingCompanyGetAllController = new PublishingCompanyGetAllController();
 router.get('/', publishingCompanyGetAllController.handler);
 
-const publishingCompanyCreateOneController = new PublishingCompanyCreateOneController();
+const publishingCompanyCreateOneOrManyController = new PublishingCompanyCreateOneOrManyController();
 const fixOpeningDateType = new FixOpeningDateType();
 router.post(
   '/',
   fixOpeningDateType.handler,
-  publishingCompanyCreateOneController.handler
+  publishingCompanyCreateOneOrManyController.handler
 );
 
 export default router;

@@ -20,6 +20,20 @@ class PublishingCompany {
             return allPublishingCompanies;
         });
     }
+    createOne({ data }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const createdPublishingCompany = yield prismaClient_1.default.publishingCompany
+                .create({ data });
+            return createdPublishingCompany;
+        });
+    }
+    createMany({ data }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const createdPublishingCompanies = yield prismaClient_1.default.publishingCompany
+                .createMany({ data });
+            return createdPublishingCompanies;
+        });
+    }
 }
 ;
 exports.default = PublishingCompany;

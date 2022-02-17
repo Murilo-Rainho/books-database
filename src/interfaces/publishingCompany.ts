@@ -1,3 +1,11 @@
+export interface wrongPublishingCompanyOpeningDateType {
+  corporateName: string;
+  fantasyName: string;
+  openingDate: string;
+  address: string;
+  cellphone: string;
+};
+
 export interface newPublishingCompany {
   corporateName: string;
   fantasyName: string;

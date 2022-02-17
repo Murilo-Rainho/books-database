@@ -10,12 +10,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const services_1 = require("../services");
-class PublishingCompanyGetAllController {
-    handler(_req, res, next) {
+class PublishingCompanyCreateOneOrManyController {
+    handler(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const publishingCompanyGetAllService = new services_1.PublishingCompanyGetAllService();
-                const allPublishingCompanies = yield publishingCompanyGetAllService.handle();
+                const publishingCompanyCreateOneService = new services_1.PublishingCompanyCreateOneService();
+                const publishingCompaniesCreateManyService = new services_1.PublishingCompaniesCreateManyService();
+                const data = req.data;
+                let allPublishingCompanies;
+                if (Array.isArray(data)) {
+                    allPublishingCompanies = yield publishingCompaniesCreateManyService.handle(data);
+                    return res.status(200).json(allPublishingCompanies);
+                }
+                allPublishingCompanies = yield publishingCompanyCreateOneService.handle(data);
                 return res.status(200).json(allPublishingCompanies);
             }
             catch (error) {
@@ -25,5 +32,5 @@ class PublishingCompanyGetAllController {
     }
 }
 ;
-exports.default = PublishingCompanyGetAllController;
-//# sourceMappingURL=PublishingCompanyGetAllController.js.map
+exports.default = PublishingCompanyCreateOneOrManyController;
+//# sourceMappingURL=PublishingCompanyCreateOneOrManyController.js.map
