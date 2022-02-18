@@ -10,16 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const models_1 = require("../models");
-class PublishingCompaniesCreateManyService {
-    handle(data) {
+class PublishingCompanyUpdateService {
+    handle(id, data) {
         return __awaiter(this, void 0, void 0, function* () {
             const publishingCompanyModel = new models_1.PublishingCompany();
-            yield publishingCompanyModel
-                .createMany({ data });
-            return data;
+            const editedPublishingCompany = yield publishingCompanyModel.update(id, { data });
+            return editedPublishingCompany;
         });
     }
 }
 ;
-exports.default = PublishingCompaniesCreateManyService;
-//# sourceMappingURL=PublishingCompaniesCreateManyService.js.map
+exports.default = PublishingCompanyUpdateService;
+//# sourceMappingURL=PublishingCompanyUpdateService.js.map

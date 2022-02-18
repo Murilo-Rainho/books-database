@@ -22,6 +22,16 @@ class PublishingCompany {
 
     return createdPublishingCompanies;
   }
+
+  async update(id: number, { data }: { data: newPublishingCompany }) {
+    const updatedPublishingCompany = await prismaClient.publishingCompany
+      .update({
+        where: { id },
+        data,
+      });
+
+    return updatedPublishingCompany;
+  }
 };
 
 export default PublishingCompany;

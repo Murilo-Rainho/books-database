@@ -34,6 +34,16 @@ class PublishingCompany {
             return createdPublishingCompanies;
         });
     }
+    update(id, { data }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const updatedPublishingCompany = yield prismaClient_1.default.publishingCompany
+                .update({
+                where: { id },
+                data,
+            });
+            return updatedPublishingCompany;
+        });
+    }
 }
 ;
 exports.default = PublishingCompany;
