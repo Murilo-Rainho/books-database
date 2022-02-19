@@ -4,6 +4,7 @@ import {
   PublishingCompanyGetAllController,
   PublishingCompanyCreateOneOrManyController,
   PublishingCompanyUpdateController,
+  PublishingCompanyDeleteController,
 } from '../controllers';
 
 import { FixOpeningDateType } from '../middlewares';
@@ -33,5 +34,10 @@ router.put(
   fixOpeningDateType.handler,
   publishingCompanyUpdateController.handler
 );
+
+// delete a publishing company
+
+const publishingCompanyDeleteController = new PublishingCompanyDeleteController();
+router.delete('/:id', publishingCompanyDeleteController.handler);
 
 export default router;

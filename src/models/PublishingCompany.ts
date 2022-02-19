@@ -32,6 +32,13 @@ class PublishingCompany {
 
     return updatedPublishingCompany;
   }
+
+  async delete(id: number): Promise<publishingCompany> {
+    const deletedPublishingCompany = await prismaClient.publishingCompany
+      .delete({ where: { id } });
+
+    return deletedPublishingCompany;
+  }
 };
 
 export default PublishingCompany;
