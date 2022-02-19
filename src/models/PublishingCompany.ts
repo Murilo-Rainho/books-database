@@ -16,14 +16,14 @@ class PublishingCompany {
     return createdPublishingCompany;
   }
 
-  async createMany({ data }: { data: newPublishingCompany[] }) {
-    const createdPublishingCompanies = await prismaClient.publishingCompany
+  async createMany({ data }: { data: newPublishingCompany[] }): Promise<number> {
+    const { count: howManyAdded } = await prismaClient.publishingCompany
       .createMany({ data });
 
-    return createdPublishingCompanies;
+    return howManyAdded;
   }
 
-  async update(id: number, { data }: { data: newPublishingCompany }) {
+  async update(id: number, { data }: { data: newPublishingCompany }): Promise<publishingCompany> {
     const updatedPublishingCompany = await prismaClient.publishingCompany
       .update({
         where: { id },
