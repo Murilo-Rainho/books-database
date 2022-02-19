@@ -23,7 +23,10 @@ class PublishingCompany {
     return howManyAdded;
   }
 
-  async update(id: number, { data }: { data: newPublishingCompany }): Promise<publishingCompany> {
+  async update(
+    { where: { id } }: { where: { id: number } },
+    { data }: { data: newPublishingCompany },
+  ): Promise<publishingCompany> {
     const updatedPublishingCompany = await prismaClient.publishingCompany
       .update({
         where: { id },
@@ -33,7 +36,9 @@ class PublishingCompany {
     return updatedPublishingCompany;
   }
 
-  async delete(id: number): Promise<publishingCompany> {
+  async delete(
+    { where: { id } }: { where: { id: number } },
+  ): Promise<publishingCompany> {
     const deletedPublishingCompany = await prismaClient.publishingCompany
       .delete({ where: { id } });
 

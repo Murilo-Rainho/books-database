@@ -6,7 +6,7 @@ class PublishingCompanyDeleteService {
   async handle(id: number): Promise<publishingCompany> {
     const publishingCompanyModel = new PublishingCompany();
     const deletedPublishingCompany = await publishingCompanyModel
-      .delete(id);
+      .delete({ where: { id } });
 
     return deletedPublishingCompany;
   }
