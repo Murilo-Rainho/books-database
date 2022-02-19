@@ -4,6 +4,8 @@ import { PublishingCompanyGetAllService } from '../services'
 
 import { publishingCompany } from '../interfaces';
 
+import { statusHttp } from '../enums';
+
 class PublishingCompanyGetAllController {
   async handler(
     _req: Request,
@@ -15,7 +17,7 @@ class PublishingCompanyGetAllController {
   
       const allPublishingCompanies = await publishingCompanyGetAllService.handle();
   
-      return res.status(200).json(allPublishingCompanies)
+      return res.status(statusHttp.Ok).json(allPublishingCompanies)
     } catch (error) {
       next(error);
     }

@@ -4,6 +4,8 @@ import { PublishingCompanyCreateOneService, PublishingCompaniesCreateManyService
 
 import { newPublishingCompany, publishingCompany } from '../interfaces';
 
+import { statusHttp } from '../enums';
+
 class PublishingCompanyCreateOneOrManyController {
   async handler(
     req: Request,
@@ -13,18 +15,19 @@ class PublishingCompanyCreateOneOrManyController {
     try {
       const publishingCompanyCreateOneService = new PublishingCompanyCreateOneService();
       const publishingCompaniesCreateManyService = new PublishingCompaniesCreateManyService();
+
       const data = req.data as newPublishingCompany | newPublishingCompany[];
       let allPublishingCompanies;
 
       if (Array.isArray(data)) {
         allPublishingCompanies = await publishingCompaniesCreateManyService.handle(data);
 
-        return res.status(200).json(allPublishingCompanies);
+        return res.status(statusHttp.Ok).json(allPublishingCompanies);
       }
   
       allPublishingCompanies = await publishingCompanyCreateOneService.handle(data);
   
-      return res.status(200).json(allPublishingCompanies)
+      return res.status(statusHttp.Ok).json(allPublishingCompanies)
     } catch (error) {
       next(error);
     }

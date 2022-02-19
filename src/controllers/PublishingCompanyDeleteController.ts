@@ -4,6 +4,8 @@ import { PublishingCompanyDeleteService } from '../services'
 
 import { publishingCompany } from '../interfaces';
 
+import { statusHttp } from '../enums';
+
 class PublishingCompanyDeleteController {
   async handler(
     req: Request,
@@ -17,7 +19,7 @@ class PublishingCompanyDeleteController {
   
       const deletedPublishingCompany = await publishingCompanyDeleteService.handle(Number(id));
   
-      return res.status(200).json(deletedPublishingCompany)
+      return res.status(statusHttp.Ok).json(deletedPublishingCompany)
     } catch (error) {
       next(error);
     }

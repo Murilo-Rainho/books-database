@@ -4,6 +4,8 @@ import { PublishingCompanyUpdateService } from '../services'
 
 import { publishingCompany, newPublishingCompany } from '../interfaces';
 
+import { statusHttp } from '../enums';
+
 class PublishingCompanyUpdateController {
   async handler(
     req: Request,
@@ -19,7 +21,7 @@ class PublishingCompanyUpdateController {
       const editedPublishinCompany = await publishingCompanyUpdateService
         .handle(Number(id), data);
   
-      return res.status(200).json(editedPublishinCompany)
+      return res.status(statusHttp.Ok).json(editedPublishinCompany)
     } catch (error) {
       next(error);
     }
