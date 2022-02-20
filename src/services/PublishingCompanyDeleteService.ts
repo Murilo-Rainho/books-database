@@ -1,10 +1,10 @@
-import { PublishingCompany } from '../models'
+import { PublishingCompanyModel } from '../models'
 
-import { publishingCompany } from '../interfaces';
+import { PublishingCompany } from '../interfaces';
 
 class PublishingCompanyDeleteService {
-  async handle(id: number): Promise<publishingCompany> {
-    const publishingCompanyModel = new PublishingCompany();
+  async handle(id: number): Promise<PublishingCompany> {
+    const publishingCompanyModel = new PublishingCompanyModel();
     const deletedPublishingCompany = await publishingCompanyModel
       .delete({ where: { id } });
 

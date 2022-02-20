@@ -2,7 +2,7 @@ import { Response, Request, NextFunction } from 'express';
 
 import { PublishingCompanyUpdateService } from '../services'
 
-import { publishingCompany, newPublishingCompany } from '../interfaces';
+import { PublishingCompany, NewPublishingCompany } from '../interfaces';
 
 import { statusHttp } from '../enums';
 
@@ -11,11 +11,11 @@ class PublishingCompanyUpdateController {
     req: Request,
     res: Response,
     next: NextFunction
-  ): Promise<Response<publishingCompany> | void> {
+  ): Promise<Response<PublishingCompany> | void> {
     try {
       const publishingCompanyUpdateService = new PublishingCompanyUpdateService();
 
-      const data = req.data as newPublishingCompany;
+      const data = req.data as NewPublishingCompany;
       const { id } = req.params;
 
       const editedPublishinCompany = await publishingCompanyUpdateService

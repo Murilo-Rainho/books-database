@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const services_1 = require("../services");
+const enums_1 = require("../enums");
 class PublishingCompanyCreateOneOrManyController {
     handler(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -20,10 +21,10 @@ class PublishingCompanyCreateOneOrManyController {
                 let allPublishingCompanies;
                 if (Array.isArray(data)) {
                     allPublishingCompanies = yield publishingCompaniesCreateManyService.handle(data);
-                    return res.status(200).json(allPublishingCompanies);
+                    return res.status(enums_1.statusHttp.Ok).json(allPublishingCompanies);
                 }
                 allPublishingCompanies = yield publishingCompanyCreateOneService.handle(data);
-                return res.status(200).json(allPublishingCompanies);
+                return res.status(enums_1.statusHttp.Ok).json(allPublishingCompanies);
             }
             catch (error) {
                 next(error);

@@ -1,1 +1,1 @@
-export { default as PublishingCompany } from './PublishingCompany';
+export { default as PublishingCompanyModel } from './PublishingCompanyModel';

@@ -1,8 +1,8 @@
-import { PublishingCompany } from '../models'
+import { PublishingCompanyModel } from '../models'
 
 class PublishingCompanyGetAllService {
   async handle() {
-    const publishingCompanyModel = new PublishingCompany();
+    const publishingCompanyModel = new PublishingCompanyModel();
     const allPublishingCompanies = await publishingCompanyModel.getAll();
 
     return allPublishingCompanies;

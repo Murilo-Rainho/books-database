@@ -11,16 +11,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const services_1 = require("../services");
 const enums_1 = require("../enums");
-class PublishingCompanyUpdateController {
+class PublishingCompanyDeleteController {
     handler(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const publishingCompanyUpdateService = new services_1.PublishingCompanyUpdateService();
-                const data = req.data;
+                const publishingCompanyDeleteService = new services_1.PublishingCompanyDeleteService();
                 const { id } = req.params;
-                const editedPublishinCompany = yield publishingCompanyUpdateService
-                    .handle(Number(id), data);
-                return res.status(enums_1.statusHttp.Ok).json(editedPublishinCompany);
+                const deletedPublishingCompany = yield publishingCompanyDeleteService.handle(Number(id));
+                return res.status(enums_1.statusHttp.Ok).json(deletedPublishingCompany);
             }
             catch (error) {
                 next(error);
@@ -29,5 +27,5 @@ class PublishingCompanyUpdateController {
     }
 }
 ;
-exports.default = PublishingCompanyUpdateController;
-//# sourceMappingURL=PublishingCompanyUpdateController.js.map
+exports.default = PublishingCompanyDeleteController;
+//# sourceMappingURL=PublishingCompanyDeleteController.js.map

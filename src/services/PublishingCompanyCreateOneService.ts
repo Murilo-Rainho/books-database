@@ -1,10 +1,10 @@
-import { PublishingCompany } from '../models'
+import { PublishingCompanyModel } from '../models'
 
-import { newPublishingCompany, publishingCompany } from '../interfaces';
+import { NewPublishingCompany, PublishingCompany } from '../interfaces';
 
 class PublishingCompanyCreateOneService {
-  async handle(data : newPublishingCompany): Promise<publishingCompany> {
-    const publishingCompanyModel = new PublishingCompany();
+  async handle(data : NewPublishingCompany): Promise<PublishingCompany> {
+    const publishingCompanyModel = new PublishingCompanyModel();
     const newPublishingCompany = await publishingCompanyModel
       .createOne({ data });
 

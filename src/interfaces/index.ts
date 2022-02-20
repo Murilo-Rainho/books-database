@@ -1,3 +1,3 @@
-export { publishingCompany, newPublishingCompany, wrongPublishingCompanyOpeningDateType } from './publishingCompany';
-export { default as httpException } from './httpException';
-export { default as objectError } from './objectError';
+export { PublishingCompany, NewPublishingCompany, WrongPublishingCompanyOpeningDateType } from './PublishingCompany';
+export { default as HttpException } from './HttpException';
+export { default as ObjectError } from './ObjectError';

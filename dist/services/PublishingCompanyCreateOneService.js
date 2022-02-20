@@ -13,7 +13,7 @@ const models_1 = require("../models");
 class PublishingCompanyCreateOneService {
     handle(data) {
         return __awaiter(this, void 0, void 0, function* () {
-            const publishingCompanyModel = new models_1.PublishingCompany();
+            const publishingCompanyModel = new models_1.PublishingCompanyModel();
             const newPublishingCompany = yield publishingCompanyModel
                 .createOne({ data });
             return newPublishingCompany;

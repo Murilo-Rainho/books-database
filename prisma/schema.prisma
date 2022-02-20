@@ -10,26 +10,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model publishingCompany {
+model PublishingCompany {
   id            Int      @id @default(autoincrement())
-  corporateName String   @db.VarChar(70)
-  fantasyName   String   @db.VarChar(70)
-  openingDate   DateTime
+  corporate_name String   @db.VarChar(70)
+  fantasy_name   String   @db.VarChar(70)
+  opening_date   DateTime
   address       String   @db.VarChar(200)
   cellphone     String   @db.Char(11)
 
   @@map("publishing_companies")
-  book book[]
+  book Book[]
 }
 
-model book {
+model Book {
   id                 Int               @id @default(autoincrement())
   isbn               String            @db.VarChar(15)
   title              String            @db.VarChar(50)
   price              Decimal           @db.Decimal(5, 2)
   category           String            @db.VarChar(20)
-  publishinCompanyId Int
-  PublishingCompany  publishingCompany @relation(fields: [publishinCompanyId], references: [id])
+  publishin_company_id Int
+  Publishing_company  PublishingCompany @relation(fields: [publishin_company_id], references: [id])
 
   @@map("books")
 }

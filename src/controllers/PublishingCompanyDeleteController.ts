@@ -2,7 +2,7 @@ import { Response, Request, NextFunction } from 'express';
 
 import { PublishingCompanyDeleteService } from '../services'
 
-import { publishingCompany } from '../interfaces';
+import { PublishingCompany } from '../interfaces';
 
 import { statusHttp } from '../enums';
 
@@ -11,7 +11,7 @@ class PublishingCompanyDeleteController {
     req: Request,
     res: Response,
     next: NextFunction
-  ): Promise<Response<publishingCompany> | void> {
+  ): Promise<Response<PublishingCompany> | void> {
     try {
       const publishingCompanyDeleteService = new PublishingCompanyDeleteService();
 

@@ -9,25 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const services_1 = require("../services");
-const enums_1 = require("../enums");
-class PublishingCompanyUpdateController {
-    handler(req, res, next) {
+const models_1 = require("../models");
+class PublishingCompanyDeleteService {
+    handle(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const publishingCompanyUpdateService = new services_1.PublishingCompanyUpdateService();
-                const data = req.data;
-                const { id } = req.params;
-                const editedPublishinCompany = yield publishingCompanyUpdateService
-                    .handle(Number(id), data);
-                return res.status(enums_1.statusHttp.Ok).json(editedPublishinCompany);
-            }
-            catch (error) {
-                next(error);
-            }
+            const publishingCompanyModel = new models_1.PublishingCompanyModel();
+            const deletedPublishingCompany = yield publishingCompanyModel
+                .delete({ where: { id } });
+            return deletedPublishingCompany;
         });
     }
 }
 ;
-exports.default = PublishingCompanyUpdateController;
-//# sourceMappingURL=PublishingCompanyUpdateController.js.map
+exports.default = PublishingCompanyDeleteService;
+//# sourceMappingURL=PublishingCompanyDeleteService.js.map

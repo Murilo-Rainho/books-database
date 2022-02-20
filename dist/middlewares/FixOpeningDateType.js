@@ -4,11 +4,11 @@ const fixOpeningDateFunc = (data) => {
     const editedOpeningDate = new Date(data.openingDate);
     const { corporateName, fantasyName, address, cellphone, } = data;
     return {
-        corporateName,
-        fantasyName,
+        corporate_name: corporateName,
+        fantasy_name: fantasyName,
         address,
         cellphone,
-        openingDate: editedOpeningDate,
+        opening_date: editedOpeningDate,
     };
 };
 class FixOpeningDateType {

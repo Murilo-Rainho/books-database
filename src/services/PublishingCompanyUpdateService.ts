@@ -1,10 +1,10 @@
-import { PublishingCompany } from '../models';
+import { PublishingCompanyModel } from '../models';
 
-import { newPublishingCompany, publishingCompany } from '../interfaces';
+import { NewPublishingCompany, PublishingCompany } from '../interfaces';
 
 class PublishingCompanyUpdateService {
-  async handle(id: number, data: newPublishingCompany) {
-    const publishingCompanyModel = new PublishingCompany();
+  async handle(id: number, data: NewPublishingCompany): Promise<PublishingCompany> {
+    const publishingCompanyModel = new PublishingCompanyModel();
     const editedPublishingCompany = await publishingCompanyModel
       .update({ where: { id } }, { data });
 

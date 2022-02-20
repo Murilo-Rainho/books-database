@@ -1,8 +1,8 @@
 import { Response, Request, NextFunction } from 'express';
 
-import { newPublishingCompany, wrongPublishingCompanyOpeningDateType } from '../interfaces';
+import { NewPublishingCompany, WrongPublishingCompanyOpeningDateType } from '../interfaces';
 
-const fixOpeningDateFunc = (data: wrongPublishingCompanyOpeningDateType): newPublishingCompany => {
+const fixOpeningDateFunc = (data: WrongPublishingCompanyOpeningDateType): NewPublishingCompany => {
   const editedOpeningDate = new Date(data.openingDate);
 
   const {
@@ -13,11 +13,11 @@ const fixOpeningDateFunc = (data: wrongPublishingCompanyOpeningDateType): newPub
   } = data;
 
   return {
-    corporateName,
-    fantasyName,
+    corporate_name: corporateName,
+    fantasy_name: fantasyName,
     address,
     cellphone,
-    openingDate: editedOpeningDate,
+    opening_date: editedOpeningDate,
   };
 };
 
@@ -29,7 +29,7 @@ class FixOpeningDateType {
   ): void {
     try {
       const data = req.body;
-      let editedData: newPublishingCompany | newPublishingCompany[];
+      let editedData: NewPublishingCompany | NewPublishingCompany[];
 
       if (!Array.isArray(data)) {
         editedData = fixOpeningDateFunc(data);

@@ -14,5 +14,8 @@ router.post('/', fixOpeningDateType.handler, publishingCompanyCreateOneOrManyCon
 // edit a publishing company
 const publishingCompanyUpdateController = new controllers_1.PublishingCompanyUpdateController();
 router.put('/:id', fixOpeningDateType.handler, publishingCompanyUpdateController.handler);
+// delete a publishing company
+const publishingCompanyDeleteController = new controllers_1.PublishingCompanyDeleteController();
+router.delete('/:id', publishingCompanyDeleteController.handler);
 exports.default = router;
 //# sourceMappingURL=publishingCompany.js.map

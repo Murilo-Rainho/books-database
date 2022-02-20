@@ -1,10 +1,10 @@
-import { PublishingCompany } from '../models'
+import { PublishingCompanyModel } from '../models'
 
-import { newPublishingCompany } from '../interfaces';
+import { NewPublishingCompany } from '../interfaces';
 
 class PublishingCompaniesCreateManyService {
-  async handle(data : newPublishingCompany[]) {
-    const publishingCompanyModel = new PublishingCompany();
+  async handle(data : NewPublishingCompany[]) {
+    const publishingCompanyModel = new PublishingCompanyModel();
     await publishingCompanyModel
       .createMany({ data });
 

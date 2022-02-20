@@ -13,8 +13,9 @@ const models_1 = require("../models");
 class PublishingCompanyUpdateService {
     handle(id, data) {
         return __awaiter(this, void 0, void 0, function* () {
-            const publishingCompanyModel = new models_1.PublishingCompany();
-            const editedPublishingCompany = yield publishingCompanyModel.update(id, { data });
+            const publishingCompanyModel = new models_1.PublishingCompanyModel();
+            const editedPublishingCompany = yield publishingCompanyModel
+                .update({ where: { id } }, { data });
             return editedPublishingCompany;
         });
     }

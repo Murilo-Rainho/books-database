@@ -1,22 +1,26 @@
 import prismaClient from '../database/prismaClient';
 
-import { newPublishingCompany, publishingCompany } from '../interfaces';
+import { NewPublishingCompany, PublishingCompany } from '../interfaces';
 
-class PublishingCompany {
-  async getAll(): Promise<publishingCompany[]> {
+class PublishingCompanyModel {
+  async getAll(): Promise<PublishingCompany[]> {
     const allPublishingCompanies = await prismaClient.publishingCompany.findMany();
 
     return allPublishingCompanies;
   }
 
-  async createOne({ data }: { data: newPublishingCompany }): Promise<publishingCompany> {
+  async createOne(
+    { data }: { data: NewPublishingCompany },
+  ): Promise<PublishingCompany> {
     const createdPublishingCompany = await prismaClient.publishingCompany
       .create({ data });
 
     return createdPublishingCompany;
   }
 
-  async createMany({ data }: { data: newPublishingCompany[] }): Promise<number> {
+  async createMany(
+    { data }: { data: NewPublishingCompany[] },
+  ): Promise<number> {
     const { count: howManyAdded } = await prismaClient.publishingCompany
       .createMany({ data });
 
@@ -25,8 +29,8 @@ class PublishingCompany {
 
   async update(
     { where: { id } }: { where: { id: number } },
-    { data }: { data: newPublishingCompany },
-  ): Promise<publishingCompany> {
+    { data }: { data: NewPublishingCompany },
+  ): Promise<PublishingCompany> {
     const updatedPublishingCompany = await prismaClient.publishingCompany
       .update({
         where: { id },
@@ -38,7 +42,7 @@ class PublishingCompany {
 
   async delete(
     { where: { id } }: { where: { id: number } },
-  ): Promise<publishingCompany> {
+  ): Promise<PublishingCompany> {
     const deletedPublishingCompany = await prismaClient.publishingCompany
       .delete({ where: { id } });
 
@@ -46,4 +50,4 @@ class PublishingCompany {
   }
 };
 
-export default PublishingCompany;
+export default PublishingCompanyModel;

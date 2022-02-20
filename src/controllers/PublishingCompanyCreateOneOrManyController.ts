@@ -2,7 +2,7 @@ import { Response, Request, NextFunction } from 'express';
 
 import { PublishingCompanyCreateOneService, PublishingCompaniesCreateManyService } from '../services'
 
-import { newPublishingCompany, publishingCompany } from '../interfaces';
+import { NewPublishingCompany, PublishingCompany } from '../interfaces';
 
 import { statusHttp } from '../enums';
 
@@ -11,12 +11,12 @@ class PublishingCompanyCreateOneOrManyController {
     req: Request,
     res: Response,
     next: NextFunction
-  ): Promise<Response<publishingCompany> | void> {
+  ): Promise<Response<PublishingCompany> | void> {
     try {
       const publishingCompanyCreateOneService = new PublishingCompanyCreateOneService();
       const publishingCompaniesCreateManyService = new PublishingCompaniesCreateManyService();
 
-      const data = req.data as newPublishingCompany | newPublishingCompany[];
+      const data = req.data as NewPublishingCompany | NewPublishingCompany[];
       let allPublishingCompanies;
 
       if (Array.isArray(data)) {
