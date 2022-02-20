@@ -18,5 +18,5 @@ model publishingCompany {
   address String @db.VarChar(200)
   cellphone String @db.Char(11)
 
-  @@map("publishin_companies")
+  @@map("publishing_companies")
 }
