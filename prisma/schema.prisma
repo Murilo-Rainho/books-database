@@ -11,12 +11,25 @@ datasource db {
 }
 
 model publishingCompany {
-  id Int @id @default(autoincrement())
-  corporateName String @db.VarChar(70)
-  fantasyName String @db.VarChar(70)
-  openingDate DateTime 
-  address String @db.VarChar(200)
-  cellphone String @db.Char(11)
+  id            Int      @id @default(autoincrement())
+  corporateName String   @db.VarChar(70)
+  fantasyName   String   @db.VarChar(70)
+  openingDate   DateTime
+  address       String   @db.VarChar(200)
+  cellphone     String   @db.Char(11)
 
   @@map("publishing_companies")
+  book book[]
+}
+
+model book {
+  id                 Int               @id @default(autoincrement())
+  isbn               String            @db.VarChar(15)
+  title              String            @db.VarChar(50)
+  price              Decimal           @db.Decimal(5, 2)
+  category           String            @db.VarChar(20)
+  publishinCompanyId Int
+  PublishingCompany  publishingCompany @relation(fields: [publishinCompanyId], references: [id])
+
+  @@map("books")
 }
