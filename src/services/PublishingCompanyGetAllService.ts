@@ -1,7 +1,9 @@
 import { PublishingCompanyModel } from '../models'
 
+import { PublishingCompany } from '../interfaces';
+
 class PublishingCompanyGetAllService {
-  async handle() {
+  async handle(): Promise<PublishingCompany[]> {
     const publishingCompanyModel = new PublishingCompanyModel();
     const allPublishingCompanies = await publishingCompanyModel.getAll();
 
