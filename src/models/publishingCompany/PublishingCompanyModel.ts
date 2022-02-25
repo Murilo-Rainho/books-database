@@ -1,6 +1,6 @@
-import prismaClient from '../database/prismaClient';
+import prismaClient from '../../database/prismaClient';
 
-import { NewPublishingCompany, PublishingCompany } from '../interfaces';
+import { NewPublishingCompany, PublishingCompany } from '../../interfaces/publishingCompany';
 
 class PublishingCompanyModel {
   async getAll(): Promise<PublishingCompany[]> {

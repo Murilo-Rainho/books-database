@@ -1,10 +1,10 @@
 import { Response, Request, NextFunction } from 'express';
 
-import { PublishingCompanyDeleteService } from '../services'
+import { PublishingCompanyDeleteService } from '../../services/publishingCompany'
 
-import { PublishingCompany } from '../interfaces';
+import { PublishingCompany } from '../../interfaces/publishingCompany';
 
-import { statusHttp } from '../enums';
+import { statusHttp } from '../../enums';
 
 class PublishingCompanyDeleteController {
   async handler(

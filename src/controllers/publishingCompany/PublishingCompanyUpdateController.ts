@@ -1,10 +1,10 @@
 import { Response, Request, NextFunction } from 'express';
 
-import { PublishingCompanyUpdateService } from '../services'
+import { PublishingCompanyUpdateService } from '../../services/publishingCompany'
 
-import { PublishingCompany, NewPublishingCompany } from '../interfaces';
+import { PublishingCompany, NewPublishingCompany } from '../../interfaces/publishingCompany';
 
-import { statusHttp } from '../enums';
+import { statusHttp } from '../../enums';
 
 class PublishingCompanyUpdateController {
   async handler(

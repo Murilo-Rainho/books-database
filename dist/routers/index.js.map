@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/routers/index.ts"],"names":[],"mappings":";;;;;;AAAA,yDAAyE;AAAhE,6IAAA,OAAO,OAA2B"}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/routers/index.ts"],"names":[],"mappings":";;;;;;AAAA,yDAAyE;AAAhE,6IAAA,OAAO,OAA2B;AAC3C,+BAA+C;AAAtC,mHAAA,OAAO,OAAc"}

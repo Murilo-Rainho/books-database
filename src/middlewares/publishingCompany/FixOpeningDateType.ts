@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from 'express';
 
-import { NewPublishingCompany, WrongPublishingCompanyOpeningDateType } from '../interfaces';
+import { NewPublishingCompany, WrongPublishingCompanyOpeningDateType } from '../../interfaces/publishingCompany';
 
 const fixOpeningDateFunc = (data: WrongPublishingCompanyOpeningDateType): NewPublishingCompany => {
   const editedOpeningDate = new Date(data.openingDate);

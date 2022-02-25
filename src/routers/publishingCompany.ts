@@ -5,9 +5,9 @@ import {
   PublishingCompanyCreateOneOrManyController,
   PublishingCompanyUpdateController,
   PublishingCompanyDeleteController,
-} from '../controllers';
+} from '../controllers/publishingCompany';
 
-import { FixOpeningDateType } from '../middlewares';
+import { FixOpeningDateType } from '../middlewares/publishingCompany';
 
 const router = Router();
 

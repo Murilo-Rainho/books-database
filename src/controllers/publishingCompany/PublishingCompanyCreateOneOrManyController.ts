@@ -1,10 +1,10 @@
 import { Response, Request, NextFunction } from 'express';
 
-import { PublishingCompanyCreateOneService, PublishingCompaniesCreateManyService } from '../services'
+import { PublishingCompanyCreateOneService, PublishingCompaniesCreateManyService } from '../../services/publishingCompany'
 
-import { NewPublishingCompany, PublishingCompany } from '../interfaces';
+import { NewPublishingCompany, PublishingCompany } from '../../interfaces/publishingCompany';
 
-import { statusHttp } from '../enums';
+import { statusHttp } from '../../enums';
 
 class PublishingCompanyCreateOneOrManyController {
   async handler(

@@ -7,29 +7,29 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = ""
 }
 
 model PublishingCompany {
-  id            Int      @id @default(autoincrement())
+  id             Int      @id @default(autoincrement())
   corporate_name String   @db.VarChar(70)
   fantasy_name   String   @db.VarChar(70)
   opening_date   DateTime
-  address       String   @db.VarChar(200)
-  cellphone     String   @db.Char(11)
+  address        String   @db.VarChar(200)
+  cellphone      String   @db.Char(11)
 
-  @@map("publishing_companies")
   book Book[]
+  @@map("publishing_companies")
 }
 
 model Book {
-  id                 Int               @id @default(autoincrement())
-  isbn               String            @db.VarChar(15)
-  title              String            @db.VarChar(50)
-  price              Decimal           @db.Decimal(5, 2)
-  category           String            @db.VarChar(20)
+  id                   Int               @id @default(autoincrement())
+  isbn                 String            @db.VarChar(15)
+  title                String            @db.VarChar(50)
+  price                Decimal           @db.Decimal(5, 2)
+  category             String            @db.VarChar(20)
   publishin_company_id Int
-  Publishing_company  PublishingCompany @relation(fields: [publishin_company_id], references: [id])
+  Publishing_company   PublishingCompany @relation(fields: [publishin_company_id], references: [id])
 
   @@map("books")
 }

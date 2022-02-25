@@ -1,6 +1,6 @@
-import { PublishingCompanyModel } from '../models'
+import { PublishingCompanyModel } from '../../models/publishingCompany'
 
-import { NewPublishingCompany, PublishingCompany } from '../interfaces';
+import { NewPublishingCompany, PublishingCompany } from '../../interfaces/publishingCompany';
 
 class PublishingCompanyCreateOneService {
   async handle(data : NewPublishingCompany): Promise<PublishingCompany> {

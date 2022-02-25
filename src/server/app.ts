@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 
 import { publishingCompanyRouter, bookRouter } from "../routers";
 
-import { errorHandler } from '../middlewares';
+import errorHandler from '../middlewares/errorHandler';
 
 const app = express();
 

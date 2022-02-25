@@ -1,6 +1,6 @@
-import { PublishingCompanyModel } from '../models'
+import { PublishingCompanyModel } from '../../models/publishingCompany'
 
-import { PublishingCompany } from '../interfaces';
+import { PublishingCompany } from '../../interfaces/publishingCompany';
 
 class PublishingCompanyDeleteService {
   async handle(id: number): Promise<PublishingCompany> {
