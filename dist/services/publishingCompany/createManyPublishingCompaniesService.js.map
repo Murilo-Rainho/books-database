@@ -1,0 +1,1 @@
+{"version":3,"file":"createManyPublishingCompaniesService.js","sourceRoot":"","sources":["../../../src/services/publishingCompany/createManyPublishingCompaniesService.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,sEAAmF;AAInF,MAAM,oCAAoC,GAAG,CAAO,IAA6B,EAAmC,EAAE;IACpH,MAAM,IAAA,sDAAkC,EAAC,EAAE,IAAI,EAAE,CAAC,CAAC;IAEnD,OAAO,IAAI,CAAC;AACd,CAAC,CAAA,CAAC;AAEF,kBAAe,oCAAoC,CAAC"}

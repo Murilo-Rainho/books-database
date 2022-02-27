@@ -1,0 +1,1 @@
+{"version":3,"file":"getAllPublishingCompaniesService.js","sourceRoot":"","sources":["../../../src/services/publishingCompany/getAllPublishingCompaniesService.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,sEAA+E;AAI/E,MAAM,gCAAgC,GAAG,GAAuC,EAAE;IAChF,MAAM,sBAAsB,GAAG,MAAM,IAAA,kDAA8B,GAAE,CAAC;IAEtE,OAAO,sBAAsB,CAAC;AAChC,CAAC,CAAA,CAAC;AAEF,kBAAe,gCAAgC,CAAC"}

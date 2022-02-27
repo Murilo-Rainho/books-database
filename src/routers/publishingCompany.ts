@@ -7,7 +7,7 @@ import {
   deletePublishingCompanyController,
 } from '../controllers/publishingCompany';
 
-import { FixOpeningDateType } from '../middlewares/publishingCompany';
+import { fixOpeningDateType } from '../middlewares/publishingCompany';
 
 const router = Router();
 
@@ -15,17 +15,16 @@ const router = Router();
 router.get('/', getAllPublishingCompaniesService);
 
 // post one or many publishing companies
-const fixOpeningDateType = new FixOpeningDateType();
 router.post(
   '/',
-  fixOpeningDateType.handler,
+  fixOpeningDateType,
   createOneOrManyPublishingCompanyController
 );
 
 // edit a publishing company
 router.put(
   '/:id',
-  fixOpeningDateType.handler,
+  fixOpeningDateType,
   updatePublishingCompanyService
 );
 

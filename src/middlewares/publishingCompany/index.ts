@@ -1,1 +1,1 @@
-export { default as FixOpeningDateType } from './FixOpeningDateType';
+export { default as fixOpeningDateType } from './fixOpeningDateType';
