@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = ""
+  url      = env("DATABASE_URL")
 }
 
 model PublishingCompany {
@@ -28,8 +28,8 @@ model Book {
   title                String            @db.VarChar(50)
   price                Decimal           @db.Decimal(5, 2)
   category             String            @db.VarChar(20)
-  publishin_company_id Int
-  Publishing_company   PublishingCompany @relation(fields: [publishin_company_id], references: [id])
+  publishing_company_id Int
+  Publishing_company   PublishingCompany @relation(fields: [publishing_company_id], references: [id])
 
   @@map("books")
 }

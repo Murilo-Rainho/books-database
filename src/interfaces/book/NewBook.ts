@@ -1,9 +1,11 @@
+import { Prisma } from ".prisma/client";
+
 interface NewBook {
   isbn: string;
   title: string;
-  price: number;
+  price: Prisma.Decimal;
   category: string;
-  publishingCompanyId: number;
+  publishing_company_id: number;
 }
 
 export default NewBook;
