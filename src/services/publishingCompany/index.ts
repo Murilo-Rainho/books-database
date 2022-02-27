@@ -1,5 +1,5 @@
-export { default as PublishingCompanyGetAllService } from './PublishingCompanyGetAllService';
-export { default as PublishingCompanyCreateOneService } from './PublishingCompanyCreateOneService';
-export { default as PublishingCompaniesCreateManyService } from './PublishingCompaniesCreateManyService';
-export { default as PublishingCompanyUpdateService } from './PublishingCompanyUpdateService';
-export { default as PublishingCompanyDeleteService } from './PublishingCompanyDeleteService';
+export { default as getAllPublishingCompaniesService } from './getAllPublishingCompaniesService';
+export { default as createOnePublishingCompanyService } from './createOnePublishingCompanyService';
+export { default as createManyPublishingCompaniesService } from './createManyPublishingCompaniesService';
+export { default as updatePublishingCompanyService } from './updatePublishingCompanyService';
+export { default as deletePublishingCompanyService } from './deletePublishingCompanyService';

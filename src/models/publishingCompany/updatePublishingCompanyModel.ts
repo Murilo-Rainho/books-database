@@ -2,7 +2,7 @@ import prismaClient from '../../database/prismaClient';
 
 import { NewPublishingCompany, PublishingCompany } from '../../interfaces/publishingCompany';
 
-const updatePublishingCompany = async (
+const updatePublishingCompanyModel = async (
   { where: { id } }: { where: { id: number } },
   { data }: { data: NewPublishingCompany },
 ): Promise<PublishingCompany> => {
@@ -13,6 +13,6 @@ const updatePublishingCompany = async (
     });
 
   return updatedPublishingCompany;
-}
+};
 
-export default updatePublishingCompany;
+export default updatePublishingCompanyModel;
