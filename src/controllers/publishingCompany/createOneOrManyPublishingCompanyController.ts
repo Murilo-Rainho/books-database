@@ -12,7 +12,6 @@ const createOneOrManyPublishingCompanyController = async (
   next: NextFunction
 ): Promise<Response<PublishingCompany> | void> => {
   try {
-
     const data = req.data as NewPublishingCompany | NewPublishingCompany[];
     let allPublishingCompanies;
 
