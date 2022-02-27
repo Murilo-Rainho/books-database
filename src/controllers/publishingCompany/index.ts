@@ -1,4 +1,4 @@
-export { default as PublishingCompanyGetAllController } from './PublishingCompanyGetAllController';
-export { default as PublishingCompanyCreateOneOrManyController } from './PublishingCompanyCreateOneOrManyController';
-export { default as PublishingCompanyUpdateController } from './PublishingCompanyUpdateController';
-export { default as PublishingCompanyDeleteController } from './PublishingCompanyDeleteController';
+export { default as getAllPublishingCompaniesService } from './getAllPublishingCompaniesService';
+export { default as createOneOrManyPublishingCompanyController } from './createOneOrManyPublishingCompanyController';
+export { default as updatePublishingCompanyService } from './updatePublishingCompanyService';
+export { default as deletePublishingCompanyController } from './deletePublishingCompanyController';
