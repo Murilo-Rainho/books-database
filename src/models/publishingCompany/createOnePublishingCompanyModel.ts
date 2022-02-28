@@ -5,8 +5,8 @@ import { NewPublishingCompany, PublishingCompany } from '../../interfaces/publis
 const createOnePublishingCompanyModel = async (
   { data }: { data: NewPublishingCompany },
 ): Promise<PublishingCompany> => {
-  const createdPublishingCompany = await prismaClient.publishingCompany
-  .create({ data });
+  const createdPublishingCompany = await prismaClient
+    .publishingCompany.create({ data });
 
   return createdPublishingCompany;
 };

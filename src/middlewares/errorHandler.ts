@@ -12,7 +12,7 @@ const errorHandler = (
   res: Response,
   _next: NextFunction
 ): Response<ObjectError> => {
-  // console.log(error);
+  console.log(error);
   const returnResponse: ObjectError = {
     message: `Something went wrong: ${error.message}`,
   };
