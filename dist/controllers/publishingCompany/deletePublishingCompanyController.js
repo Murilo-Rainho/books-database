@@ -22,4 +22,3 @@ const deletePublishingCompanyController = (req, res, next) => __awaiter(void 0, 
     }
 });
 exports.default = deletePublishingCompanyController;
-//# sourceMappingURL=deletePublishingCompanyController.js.map

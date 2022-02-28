@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const publishingCompany_1 = require("../../models/publishingCompany");
-const deletePublishingCompanyService = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const deletedPublishingCompany = yield (0, publishingCompany_1.deletePublishingCompanyModel)({ where: { id } });
-    return deletedPublishingCompany;
+const book_1 = require("../../models/book");
+const getAllBooksService = () => __awaiter(void 0, void 0, void 0, function* () {
+    const allBooks = yield (0, book_1.getAllBooksModel)();
+    return allBooks;
 });
-exports.default = deletePublishingCompanyService;
+exports.default = getAllBooksService;

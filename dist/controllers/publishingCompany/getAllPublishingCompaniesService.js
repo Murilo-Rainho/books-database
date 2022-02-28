@@ -21,4 +21,3 @@ const getAllPublishingCompanyController = (_req, res, next) => __awaiter(void 0,
     }
 });
 exports.default = getAllPublishingCompanyController;
-//# sourceMappingURL=getAllPublishingCompaniesService.js.map

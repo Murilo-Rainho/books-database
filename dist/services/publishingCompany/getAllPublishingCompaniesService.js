@@ -15,4 +15,3 @@ const getAllPublishingCompaniesService = () => __awaiter(void 0, void 0, void 0,
     return allPublishingCompanies;
 });
 exports.default = getAllPublishingCompaniesService;
-//# sourceMappingURL=getAllPublishingCompaniesService.js.map

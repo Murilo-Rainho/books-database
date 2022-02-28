@@ -13,4 +13,3 @@ router.put('/:id', publishingCompany_2.fixOpeningDateType, publishingCompany_1.u
 // delete a publishing company
 router.delete('/:id', publishingCompany_1.deletePublishingCompanyController);
 exports.default = router;
-//# sourceMappingURL=publishingCompany.js.map

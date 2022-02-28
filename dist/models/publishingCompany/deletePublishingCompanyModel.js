@@ -19,4 +19,3 @@ const deletePublishingCompanyModel = ({ where: { id } }) => __awaiter(void 0, vo
     return deletedPublishingCompany;
 });
 exports.default = deletePublishingCompanyModel;
-//# sourceMappingURL=deletePublishingCompanyModel.js.map

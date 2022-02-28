@@ -19,4 +19,3 @@ const createManyPublishingCompaniesModel = ({ data }) => __awaiter(void 0, void 
     return howManyAdded;
 });
 exports.default = createManyPublishingCompaniesModel;
-//# sourceMappingURL=createManyPublishingCompaniesModel.js.map

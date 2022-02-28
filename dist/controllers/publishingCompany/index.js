@@ -12,4 +12,3 @@ var updatePublishingCompanyService_1 = require("./updatePublishingCompanyService
 Object.defineProperty(exports, "updatePublishingCompanyService", { enumerable: true, get: function () { return __importDefault(updatePublishingCompanyService_1).default; } });
 var deletePublishingCompanyController_1 = require("./deletePublishingCompanyController");
 Object.defineProperty(exports, "deletePublishingCompanyController", { enumerable: true, get: function () { return __importDefault(deletePublishingCompanyController_1).default; } });
-//# sourceMappingURL=index.js.map

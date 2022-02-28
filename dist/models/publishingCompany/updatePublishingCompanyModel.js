@@ -22,4 +22,3 @@ const updatePublishingCompanyModel = ({ where: { id } }, { data }) => __awaiter(
     return updatedPublishingCompany;
 });
 exports.default = updatePublishingCompanyModel;
-//# sourceMappingURL=updatePublishingCompanyModel.js.map

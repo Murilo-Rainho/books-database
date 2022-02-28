@@ -10,4 +10,3 @@ const PORT = process.env.PORT || 8080;
 app_1.default.listen(PORT, () => {
     console.log(`service is listening at port ${PORT}`);
 });
-//# sourceMappingURL=service.js.map

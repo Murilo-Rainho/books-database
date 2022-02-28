@@ -8,10 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const publishingCompany_1 = require("../../models/publishingCompany");
-const deletePublishingCompanyService = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const deletedPublishingCompany = yield (0, publishingCompany_1.deletePublishingCompanyModel)({ where: { id } });
-    return deletedPublishingCompany;
+const prismaClient_1 = __importDefault(require("../../database/prismaClient"));
+const getAllBooksModel = () => __awaiter(void 0, void 0, void 0, function* () {
+    const allBooks = yield prismaClient_1.default.book.findMany();
+    return allBooks;
 });
-exports.default = deletePublishingCompanyService;
+exports.default = getAllBooksModel;

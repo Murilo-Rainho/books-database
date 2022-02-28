@@ -16,4 +16,3 @@ app.use('/publishingCompany', routers_1.publishingCompanyRouter);
 app.use('/book', routers_1.bookRouter);
 app.use(errorHandler_1.default);
 exports.default = app;
-//# sourceMappingURL=app.js.map

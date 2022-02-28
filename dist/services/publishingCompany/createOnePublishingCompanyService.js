@@ -15,4 +15,3 @@ const createOnePublishingCompanyService = (data) => __awaiter(void 0, void 0, vo
     return newPublishingCompany;
 });
 exports.default = createOnePublishingCompanyService;
-//# sourceMappingURL=createOnePublishingCompanyService.js.map

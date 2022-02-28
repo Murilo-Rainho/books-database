@@ -23,4 +23,3 @@ const updatePublishingCompanyController = (req, res, next) => __awaiter(void 0, 
     }
 });
 exports.default = updatePublishingCompanyController;
-//# sourceMappingURL=updatePublishingCompanyService.js.map

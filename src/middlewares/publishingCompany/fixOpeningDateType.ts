@@ -1,4 +1,6 @@
-import { Response, Request, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
+
+import { CustomRequest } from '../../interfaces';
 
 import { NewPublishingCompany, WrongPublishingCompanyOpeningDateType } from '../../interfaces/publishingCompany';
 
@@ -22,12 +24,12 @@ const fixOpeningDateFunc = (data: WrongPublishingCompanyOpeningDateType): NewPub
 };
 
 const fixOpeningDateType = (
-  req: Request,
+  req: CustomRequest,
   _res: Response,
   next: NextFunction
 ): void => {
   try {
-    const data = req.body;
+    const data = req.body as WrongPublishingCompanyOpeningDateType;
     let editedData: NewPublishingCompany | NewPublishingCompany[];
 
     if (!Array.isArray(data)) {

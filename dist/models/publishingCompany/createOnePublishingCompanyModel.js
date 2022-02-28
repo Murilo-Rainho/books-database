@@ -14,9 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const prismaClient_1 = __importDefault(require("../../database/prismaClient"));
 const createOnePublishingCompanyModel = ({ data }) => __awaiter(void 0, void 0, void 0, function* () {
-    const createdPublishingCompany = yield prismaClient_1.default.publishingCompany
-        .create({ data });
+    const createdPublishingCompany = yield prismaClient_1.default
+        .publishingCompany.create({ data });
     return createdPublishingCompany;
 });
 exports.default = createOnePublishingCompanyModel;
-//# sourceMappingURL=createOnePublishingCompanyModel.js.map

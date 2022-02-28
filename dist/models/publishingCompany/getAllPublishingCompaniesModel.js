@@ -13,9 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const prismaClient_1 = __importDefault(require("../../database/prismaClient"));
-const getAllPublishingCompanyModel = () => __awaiter(void 0, void 0, void 0, function* () {
+const getAllPublishingCompaniesModel = () => __awaiter(void 0, void 0, void 0, function* () {
     const allPublishingCompanies = yield prismaClient_1.default.publishingCompany.findMany();
     return allPublishingCompanies;
 });
-exports.default = getAllPublishingCompanyModel;
-//# sourceMappingURL=getAllPublishingCompaniesModel.js.map
+exports.default = getAllPublishingCompaniesModel;

@@ -6,4 +6,3 @@ var statusHttp;
 })(statusHttp || (statusHttp = {}));
 ;
 exports.default = statusHttp;
-//# sourceMappingURL=statusHttp.js.map

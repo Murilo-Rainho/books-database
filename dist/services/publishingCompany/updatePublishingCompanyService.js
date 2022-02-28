@@ -15,4 +15,3 @@ const updatePublishingCompanyService = (id, data) => __awaiter(void 0, void 0, v
     return editedPublishingCompany;
 });
 exports.default = updatePublishingCompanyService;
-//# sourceMappingURL=updatePublishingCompanyService.js.map

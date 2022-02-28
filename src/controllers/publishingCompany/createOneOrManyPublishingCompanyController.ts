@@ -1,4 +1,6 @@
-import { Response, Request, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
+
+import { CustomRequest } from '../../interfaces';
 
 import { createOnePublishingCompanyService, createManyPublishingCompaniesService } from '../../services/publishingCompany'
 
@@ -7,7 +9,7 @@ import { NewPublishingCompany, PublishingCompany } from '../../interfaces/publis
 import { statusHttp } from '../../enums';
 
 const createOneOrManyPublishingCompanyController = async (
-  req: Request,
+  req: CustomRequest,
   res: Response,
   next: NextFunction
 ): Promise<Response<PublishingCompany> | void> => {

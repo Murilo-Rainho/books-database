@@ -1,4 +1,6 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Response } from "express";
+
+import { CustomRequest } from "../../interfaces";
 
 import { createOneBookService } from '../../services/book';
 
@@ -6,12 +8,12 @@ import { Book, NewBook } from "../../interfaces/book";
 import { statusHttp } from "../../enums";
 
 const createOneBookController = async (
-  req: Request,
+  req: CustomRequest,
   res: Response,
   next: NextFunction,
 ): Promise<Response<Book> | void> => {
   try {
-    const newBook = req.body as NewBook;
+    const newBook = req.data as NewBook;
   
     const createdBook = await createOneBookService(newBook);
   

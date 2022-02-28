@@ -14,4 +14,3 @@ var getAllPublishingCompaniesModel_1 = require("./getAllPublishingCompaniesModel
 Object.defineProperty(exports, "getAllPublishingCompaniesModel", { enumerable: true, get: function () { return __importDefault(getAllPublishingCompaniesModel_1).default; } });
 var updatePublishingCompanyModel_1 = require("./updatePublishingCompanyModel");
 Object.defineProperty(exports, "updatePublishingCompanyModel", { enumerable: true, get: function () { return __importDefault(updatePublishingCompanyModel_1).default; } });
-//# sourceMappingURL=index.js.map

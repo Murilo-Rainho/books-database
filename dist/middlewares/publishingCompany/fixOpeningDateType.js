@@ -29,4 +29,3 @@ const fixOpeningDateType = (req, _res, next) => {
     }
 };
 exports.default = fixOpeningDateType;
-//# sourceMappingURL=fixOpeningDateType.js.map

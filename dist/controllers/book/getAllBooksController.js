@@ -9,21 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const publishingCompany_1 = require("../../services/publishingCompany");
 const enums_1 = require("../../enums");
-const createOneOrManyPublishingCompanyController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+const book_1 = require("../../services/book");
+const getAllBooksController = (_req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const data = req.data;
-        let allPublishingCompanies;
-        if (Array.isArray(data)) {
-            allPublishingCompanies = yield (0, publishingCompany_1.createManyPublishingCompaniesService)(data);
-            return res.status(enums_1.statusHttp.Ok).json(allPublishingCompanies);
-        }
-        allPublishingCompanies = yield (0, publishingCompany_1.createOnePublishingCompanyService)(data);
-        return res.status(enums_1.statusHttp.Ok).json(allPublishingCompanies);
+        const allBooks = yield (0, book_1.getAllBooksService)();
+        return res.status(enums_1.statusHttp.Ok).json(allBooks);
     }
     catch (error) {
         next(error);
     }
 });
-exports.default = createOneOrManyPublishingCompanyController;
+exports.default = getAllBooksController;
