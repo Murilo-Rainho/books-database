@@ -1,9 +1,9 @@
 import { Router } from "express";
 
 import {
-  getAllPublishingCompaniesService,
+  getAllPublishingCompaniesController,
   createOneOrManyPublishingCompanyController,
-  updatePublishingCompanyService,
+  updatePublishingCompanyController,
   deletePublishingCompanyController,
 } from '../controllers/publishingCompany';
 
@@ -12,7 +12,7 @@ import { fixOpeningDateType } from '../middlewares/publishingCompany';
 const router = Router();
 
 // get all publishing companies
-router.get('/', getAllPublishingCompaniesService);
+router.get('/', getAllPublishingCompaniesController);
 
 // post one or many publishing companies
 router.post(
@@ -25,7 +25,7 @@ router.post(
 router.put(
   '/:id',
   fixOpeningDateType,
-  updatePublishingCompanyService
+  updatePublishingCompanyController
 );
 
 // delete a publishing company
